@@ -1,0 +1,16 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: |
+    echo Installing requirements
+    pip install requirements.txt
+  displayName: 'Install requirements'
+
+- script: |
+    echo Running short tests
+    pytest tests/short
+  displayName: 'Run short tests'
