@@ -6,11 +6,7 @@ pool:
 
 steps:
 - script: |
-    echo Installing requirements
-    pip install -r requirements.txt
-  displayName: 'Install requirements'
-
-- script: |
     echo Running short tests
-    pytest tests/short
+    pip install -r requirements.txt
+    pytest test/short
   displayName: 'Run short tests'
