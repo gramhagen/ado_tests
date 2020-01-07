@@ -1,0 +1,21 @@
+trigger: none
+
+pr:
+- master
+
+variables:
+  skipComponentGovernanceDetection: true
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.6'
+    
+- script: |
+    echo Running long tests
+    python -m pip install -r requirements.txt
+    pytest tests/long
+  displayName: 'Run long tests'
