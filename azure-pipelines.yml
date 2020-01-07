@@ -12,5 +12,5 @@ steps:
 - script: |
     echo Running short tests
     python -m pip install -r requirements.txt
-    pytest test/short
+    pytest tests/short
   displayName: 'Run short tests'
